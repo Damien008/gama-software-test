@@ -1,3 +1,7 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+angular_app:
+    path: /
+    controller: App\Controller\AngularController::index
