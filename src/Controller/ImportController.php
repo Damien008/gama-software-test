@@ -4,17 +4,21 @@ namespace App\Controller;
 
 use App\Entity\Band;
 use App\Form\ImportType;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\BandRepository;
+use PhpOffice\PhpSpreadsheet\Exception;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class ImportController extends AbstractController
 {
+    /**
+     * @throws Exception
+     */
     #[Route('/import', name: 'import')]
-    public function importExcel(Request $request, EntityManagerInterface $entityManager): Response
+    public function importExcel(Request $request, BandRepository $bandRepository): Response
     {
         $form = $this->createForm(ImportType::class);
         $form->handleRequest($request);
@@ -23,6 +27,7 @@ class HomeController extends AbstractController
             $file = $form->get('file')->getData();
             $spreadsheet = IOFactory::load($file);
             $worksheet = $spreadsheet->getActiveSheet();
+            $worksheet->removeRow(1);
 
             foreach ($worksheet->getRowIterator() as $row){
                 $cellIterator = $row->getCellIterator();
@@ -43,12 +48,12 @@ class HomeController extends AbstractController
                     ->setNumberOfMembers(intval($rowData[6]))
                     ->setPresentation($rowData[7]);
 
-                $entityManager->persist($band);
+                $bandRepository->save($band, true);
             }
 
-            $entityManager->flush();
+            return $this->redirectToRoute('band_index');
         }
-        return $this->render('home/index.html.twig', [
+        return $this->render('import/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }
