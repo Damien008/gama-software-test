@@ -1,0 +1,49 @@
+<h1>Formulaire d'édition</h1>
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div>
+      <label for="name">Nom :</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div>
+      <label for="name">Pays :</label>
+      <input type="text" id="country" formControlName="country">
+    </div>
+    <div>
+      <label for="name">Ville :</label>
+      <input type="text" id="city" formControlName="city">
+    </div>
+    <div>
+      <label for="name">Année de début :</label>
+      <input type="number" min="1900" max="2099" id="startYear" formControlName="startYear">
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label for="name">Année de séparation :</label>
+      <input type="number" min="1900" max="2099" id="endYear" formControlName="endYear">
+    </div>
+    <div>
+      <label for="name">Fondateurs :</label>
+      <input type="text" id="founder" formControlName="founder">
+    </div>
+    <div>
+      <label for="name">Nb de membres :</label>
+      <input type="text" id="numberOfMembers" formControlName="numberOfMembers">
+    </div>
+    <div>
+      <label for="name">Courant musical :</label>
+      <input type="text" id="musicalType" formControlName="musicalType">
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label for="name">Présentation :</label>
+      <textarea style="width:250px;height:150px;" id="presentation" formControlName="presentation"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <button type="submit" [disabled]="editForm.invalid">Modifier</button>
+  </div>
+</form>

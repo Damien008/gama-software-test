@@ -1,0 +1,45 @@
+
+<div class="popup" [ngClass]="{'show': showMessage, 'hide': !showMessage}">
+  {{ message }}
+</div>
+<h1>Liste des groupes</h1>
+<div class="import">
+  <p>Importer un fichier</p>
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <input type="file" (change)="onFileChange($event)" name="file" accept=".xlsx, .xls">
+    <button type="submit">Importer</button>
+  </form>
+</div>
+<table>
+  <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Pays</th>
+        <th>Ville</th>
+        <th>Année de début</th>
+        <th>Année de séparation</th>
+        <th>Fondateur(s)</th>
+        <th>Nb de membres</th>
+        <th>Courant musical</th>
+        <th>Présentation</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let band of bands;" class="text-center">
+      <td >{{band.name}}</td>
+      <td>{{band.country}}</td>
+      <td>{{band.city}}</td>
+      <td>{{band.startYear}}</td>
+      <td>{{band.endYear}}</td>
+      <td>{{band.founder}}</td>
+      <td>{{band.numberOfMembers}}</td>
+      <td>{{band.musicalType}}</td>
+      <td>{{band.presentation}}</td>
+      <td>
+        <button routerLink="{{band.id}}/edit">modifier</button>
+        <button (click)="deleteFile(band.id)">supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

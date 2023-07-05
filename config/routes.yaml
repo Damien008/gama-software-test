@@ -1,3 +1,15 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+angular_app:
+  path: /{angularRoute}
+  controller: App\Controller\AngularController::index
+  requirements:
+    angularRoute: ".+"
+
+index:
+  path: /
+  controller: App\Controller\AngularController::index
+
+

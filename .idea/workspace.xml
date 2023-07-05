@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7494cbdb-d89e-4644-8289-90e6aca68799" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/BandController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/BandType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/band/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/band/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/band/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/band/index.html.twig" afterDir="false" />
+    <list default="true" id="7494cbdb-d89e-4644-8289-90e6aca68799" name="Changes" comment="feat delete and edit band">
+      <change afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/api_platform.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/band-list/band-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/band-list/band-list.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/band-list/band-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/band-list/band-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/band.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/edit-form/edit-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/edit-form/edit-form.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/edit-form/edit-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/edit-form/edit-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ApiResource/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gama-software-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gama-software-test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
@@ -19,9 +25,23 @@
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ImportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AngularController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ImportController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Band.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Band.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/import/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/angular/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/band/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/band/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/band/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/band/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/import/index.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +51,9 @@
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -180,6 +203,9 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
     </include_path>
   </component>
   <component name="ProjectId" id="2RsXWvRuhoIQegHDSGdT7GUfrSW" />
@@ -209,6 +235,11 @@
     ]
   }
 }</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="symfony.conf" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -227,6 +258,11 @@
       <workItem from="1688041452396" duration="458000" />
       <workItem from="1688041971849" duration="439000" />
       <workItem from="1688042460725" duration="1828000" />
+      <workItem from="1688461103270" duration="6883000" />
+      <workItem from="1688476558308" duration="163000" />
+      <workItem from="1688476737708" duration="3992000" />
+      <workItem from="1688483448752" duration="1487000" />
+      <workItem from="1688559208947" duration="2743000" />
     </task>
     <task id="LOCAL-00001" summary="entity creation">
       <option name="closed" value="true" />
@@ -254,7 +290,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="entity creation" />
     <MESSAGE value="commit" />
-    <MESSAGE value="add angular" />
-    <option name="LAST_COMMIT_MESSAGE" value="add angular" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
